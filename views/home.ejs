@@ -1,0 +1,27 @@
+<% include header.ejs %>
+<div class="all">
+<% blogs.forEach(function(blog){ %>
+
+    <div class="ui raised very padded text container segment list">
+        <h1 class="ui header"><%= blog.name %></h1>
+        <img class="ui fluid image" src="<%= blog.image %>">
+        <p><%= blog.description.substring(0, 100) %>...<a href="/blogs/<%= blog._id %>">read more</a></p>
+    </div>
+
+<% }); %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include footer.ejs %>

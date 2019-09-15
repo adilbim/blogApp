@@ -1,0 +1,52 @@
+<% include header.ejs %>
+
+
+<div class="all">
+<div class="ui raised very padded text container segment list">
+    <h1 class="ui header"><%= blog.name %></h1>
+    <img class="ui fluid image" src="<%= blog.image %>">
+    <div class="meta">
+        <span class="date"><%= blog.date.toDateString() %></span>
+    </div>
+    <p><%- blog.description %></p>
+    <div class="ui divider"></div>
+    <p>
+        <form class="ui form" action="/blogs/<%= blog._id %>" method="POST">
+            <div class="inline field">
+                <input type="text" name="comment[author]" placeholder="Author">
+                <input type="text" name="comment[content]" placeholder="Comment...">
+                <input class="ui primary button" type="submit">
+              </div> 
+        </form>
+    </p>
+    <% blog.comments.forEach(function(comment){ %>
+        <!-- <p><strong class="header"><%= comment.author %></strong> - c</p> -->
+        
+            <div class="item">
+              <i class="large github middle aligned icon"></i>
+              <div class="content">
+                <a class="header"><%= comment.author %></a>
+                <div class="description"><%= comment.content %></div>
+              </div>
+            </div>
+        
+    <% }) %>
+    <div class="ui divider"></div>
+    <a href="/blogs/<%= blog._id %>/edit" class="ui inverted purple button">Edit</a>
+    <form class="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+        <button class="ui inverted red button">Delete</button>
+    </form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<% include footer.ejs %>
