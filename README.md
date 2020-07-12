@@ -1,9 +1,13 @@
 # blogApp
-it's simple webSite with node.js, express and mongodb, and it helps you to post blogs in it with an image and a picture!
+it's simple webSite with node.js, express and mongodb, and it helps you to post blogs in it with a discription and a picture!
 
 steps to run the app:
+--------------------
 
-1- download the app
-2- cd to the file that has all the files of the app
-3- then run "node index.js"
+before you need to insatll mongoDb and node.js
+
+1- clone the app
+2- cd to the app
+3- run `npm install`
+4- run `node index.js`
 4-thanks!
